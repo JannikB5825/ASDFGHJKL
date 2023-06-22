@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ESPWetterStation Data</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div id="home" class="main-content">
+            <h1 style="text-align: center">ESPWetterStation Data</h1>
+            <div id="current-stats">
+                <span id="temp" class="current-stat">
+                    <label class="stats-title">Temperature</label>
+                    <label class="stats-value" id="temperature-value"
+                        >22C</label
+                    >
+                </span>
+                <span id="hum" class="current-stat">
+                    <label class="stats-title">Humidity</label>
+                    <label class="stats-value" id="humidity-value">44%</label>
+                </span>
+                <span id="pres" class="current-stat">
+                    <label class="stats-title">Air Pressure</label>
+                    <label class="stats-value" id="airpressure-value"
+                        >1047.45 hPa</label
+                    >
+                </span>
+            </div>
+            <div class="chartContainers">
+                <canvas id="temperatureChart"></canvas>
+            </div>
+            <div class="chartContainers">
+                <canvas id="humidityChart"></canvas>
+            </div>
+            <div class="chartContainers">
+                <canvas id="airpressureChart"></canvas>
+            </div>
+        </div>
+        <div id="history" class="main-content">
+            <span>History</span>
+        </div>
+        <div id="settings" class="main-content">
+            <div id="currentSettings">
+                
+            </div>
+            <div id="wlan-settings">
+                <div class="form__group">
+                    <input type="text" class="form__input" id="ssid" placeholder="SSID" required="" />
+                    <label for="name" class="form__label">SSID</label>
+                </div>
+                <div class="form__group">
+                    <input type="password" class="form__input" id="password" placeholder="Password" required="" />
+                    <label for="name" class="form__label">Password</label>
+                </div>
+                <span id="statusMessage"></span>
+                <div class="form__group__button">
+                    <button id="submit" onclick="setWlanSettings()">Submit</button>
+                </div>
+            </div>
+        </div>
+        
+        <script src="chart.js"></script>
+        <script src="script.js"></script>
+
+        <div id="menu">
+            <span id="menu-button" onclick="gtHome()">
+                <img id="menu-button-img" src="home.svg" />
+                <label id="menu-lable">Home</label>
+            </span>
+            <span id="menu-button" onclick="gtHistory()">
+                <img id="menu-button-img" src="history.svg" />
+                <label id="menu-lable">History</label>
+            </span>
+            <span id="menu-button" onclick="gtSettings()">
+                <img id="menu-button-img" src="settings.svg" />
+                <label id="menu-lable">Settings</label>
+            </span>
+        </div>
+    </body>
+</html>
